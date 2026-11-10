@@ -1,0 +1,15 @@
+{
+  "plugin_id": "runpod@runpod",
+  "plugin_version": "2.0.0",
+  "installed": true,
+  "enabled": true,
+  "installation_scope": "Codex CLI in current managed cloud environment",
+  "hosted_url": "https://mcp.runpod.io/",
+  "authenticated": false,
+  "local_mcp_package": "@runpod/mcp-server",
+  "local_mcp_version": "4.10.1",
+  "protocol_handshake": "passed",
+  "enumerated_tools": 119,
+  "account_tool_calls": 0,
+  "pods_created": 0
+}

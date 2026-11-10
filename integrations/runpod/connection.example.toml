@@ -1,0 +1,6 @@
+# Optional API-key connection for a new Codex client. The installed native plugin
+# already registers the hosted server; do not register a duplicate entry there.
+# Only the environment variable NAME is configured; no secret value goes here.
+[mcp_servers.runpod]
+url = "https://mcp.runpod.io/"
+bearer_token_env_var = "RUNPOD_API_KEY"

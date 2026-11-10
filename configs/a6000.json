@@ -1,0 +1,20 @@
+{
+  "model": {
+    "image_size": 32, "patch_size": 8, "channels": 3, "num_actions": 4,
+    "dim": 192, "depth": 6, "heads": 3, "mlp_ratio": 4,
+    "history": 4, "dropout": 0.0, "shared": true, "projection_batchnorm": true
+  },
+  "data": {"path": "work/data/two_room_grid.npz", "split_seed": 2026},
+  "training": {
+    "steps": 10000, "batch_size": 128, "horizon": 4, "seed": 0,
+    "learning_rate": 0.0003, "weight_decay": 0.0001, "grad_clip": 1.0,
+    "sigreg_weight": 0.1, "sigreg_projections": 128,
+    "log_every": 50, "validate_every": 500, "save_every": 500,
+    "validation_batches": 8, "validation_seed": 771,
+    "cpu_threads": 4, "amp": true, "collapse_check_after": 500, "minimum_latent_std": 0.05
+  },
+  "planner": {
+    "horizon": 12, "candidates": 256, "elites": 32, "iterations": 4,
+    "smoothing": 0.2, "uniform_mix": 0.05, "chunk_size": 128
+  }
+}

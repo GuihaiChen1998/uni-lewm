@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@runpod/mcp-server": "4.10.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "model": {
+    "image_size": 32, "patch_size": 8, "channels": 3, "num_actions": 4,
+    "dim": 48, "depth": 2, "heads": 3, "mlp_ratio": 2,
+    "history": 2, "dropout": 0.0, "shared": true, "projection_batchnorm": true
+  },
+  "data": {"path": "work/data/smoke.npz", "split_seed": 2026},
+  "training": {
+    "steps": 40, "batch_size": 16, "horizon": 2, "seed": 0,
+    "learning_rate": 0.0003, "weight_decay": 0.0001, "grad_clip": 1.0,
+    "sigreg_weight": 1.0, "sigreg_projections": 32,
+    "log_every": 10, "validate_every": 40, "save_every": 40,
+    "validation_batches": 2, "validation_seed": 771,
+    "cpu_threads": 2, "amp": false, "collapse_check_after": 500, "minimum_latent_std": 0.05
+  },
+  "planner": {
+    "horizon": 4, "candidates": 24, "elites": 6, "iterations": 2,
+    "smoothing": 0.2, "uniform_mix": 0.05, "chunk_size": 24
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "runs": [
+    {
+      "variant": "shared",
+      "seed": 0,
+      "parameters": 58224,
+      "validation_prediction": 1.0772020816802979,
+      "success_rate": 0.0,
+      "false_stop_rate": 0.0,
+      "mean_planning_seconds": 0.006800332944446079
+    },
+    {
+      "variant": "independent",
+      "seed": 0,
+      "parameters": 96240,
+      "validation_prediction": 2.5883949995040894,
+      "success_rate": 0.0,
+      "false_stop_rate": 0.0,
+      "mean_planning_seconds": 0.006762543083318128
+    },
+    {
+      "variant": "matched",
+      "seed": 0,
+      "parameters": 56628,
+      "validation_prediction": 1.4013766050338745,
+      "success_rate": 0.0,
+      "false_stop_rate": 0.0,
+      "mean_planning_seconds": 0.006337148750048982
+    }
+  ],
+  "aggregate": {
+    "shared": {
+      "parameters": {
+        "mean": 58224.0,
+        "std_across_seeds": 0.0
+      },
+      "validation_prediction": {
+        "mean": 1.0772020816802979,
+        "std_across_seeds": 0.0
+      },
+      "success_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "false_stop_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "mean_planning_seconds": {
+        "mean": 0.006800332944446079,
+        "std_across_seeds": 0.0
+      }
+    },
+    "independent": {
+      "parameters": {
+        "mean": 96240.0,
+        "std_across_seeds": 0.0
+      },
+      "validation_prediction": {
+        "mean": 2.5883949995040894,
+        "std_across_seeds": 0.0
+      },
+      "success_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "false_stop_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "mean_planning_seconds": {
+        "mean": 0.006762543083318128,
+        "std_across_seeds": 0.0
+      }
+    },
+    "matched": {
+      "parameters": {
+        "mean": 56628.0,
+        "std_across_seeds": 0.0
+      },
+      "validation_prediction": {
+        "mean": 1.4013766050338745,
+        "std_across_seeds": 0.0
+      },
+      "success_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "false_stop_rate": {
+        "mean": 0.0,
+        "std_across_seeds": 0.0
+      },
+      "mean_planning_seconds": {
+        "mean": 0.006337148750048982,
+        "std_across_seeds": 0.0
+      }
+    }
+  },
+  "note": "Toy-grid experiment; not an official LeWM benchmark reproduction."
+}

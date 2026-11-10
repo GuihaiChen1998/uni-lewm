@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fused-lewm"
+version = "0.1.0"
+description = "Research prototype: one Transformer for observation encoding and latent dynamics"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.3", "numpy>=1.24", "Pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+mcp = ["mcp>=1.10"]
+
+[project.scripts]
+fused-lewm = "fused_lewm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+

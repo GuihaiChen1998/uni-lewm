@@ -1,0 +1,12 @@
+{
+  "source": "generated locally by fused_lewm.data.generate_dataset",
+  "episodes": 40,
+  "steps_per_episode": 12,
+  "generation_seed": 42,
+  "split_seed": 2026,
+  "validation_fraction": 0.2,
+  "sha256": "f8b136184ec4b16bb1bdd0b715738586d6e41f734e82d7fe73dc9052b834ccdd",
+  "observations": "uint8 [40,13,3,32,32]",
+  "actions": "int64 [40,12]",
+  "contains_user_data": false
+}
