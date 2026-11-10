@@ -1,0 +1,19 @@
+{
+  "tensorflow_v2_replay": {
+    "seed": 31,
+    "steps": 2,
+    "independent_processes": 2,
+    "weight_arrays_bitwise_equal": true,
+    "evaluation_actions_equal": true,
+    "sha256": [
+      "d3803a4d26dc955aca9859d9455333bec00bbc41d158fe3e3cc427e017a02846",
+      "d3803a4d26dc955aca9859d9455333bec00bbc41d158fe3e3cc427e017a02846"
+    ]
+  },
+  "pytest": "25 passed",
+  "wheel": "vendored sources, licenses and manifest included",
+  "lint": "ruff check and format passed",
+  "completed_reports": 31,
+  "replayed_task_trajectories": 620,
+  "default_evaluator_tasks_match_manifest": true
+}

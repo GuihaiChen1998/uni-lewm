@@ -10,21 +10,7 @@
   "distinct_environments": 1,
   "dataset_sha256": "f8b136184ec4b16bb1bdd0b715738586d6e41f734e82d7fe73dc9052b834ccdd",
   "tasks_sha256": "d03b284a0cd88ea755b939c1ebc60d9589159d30ea652b160ddb34e59e35bb7c",
-  "missing": [
-    "lewm-seed2.json",
-    "sub_lewm-seed2.json",
-    "vlwm-seed2.json",
-    "flexiworld-seed2.json",
-    "flexiworld-direct-seed2.json",
-    "dreamerv1-seed0.json",
-    "dreamerv1-seed1.json",
-    "dreamerv1-seed2.json",
-    "dreamerv2-seed0.json",
-    "dreamerv2-seed1.json",
-    "dreamerv2-seed2.json",
-    "dreamerv3-seed1.json",
-    "dreamerv3-seed2.json"
-  ],
+  "missing": [],
   "rows": [
     {
       "method": "uni_lewm",
@@ -48,16 +34,18 @@
     {
       "method": "lewm",
       "label": "LeWM + CEM (official modules, toy scale)",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         1,
-        6
+        6,
+        5
       ],
-      "mean_success_rate": 0.175,
-      "sample_std": 0.17677669529663687,
+      "mean_success_rate": 0.2,
+      "sample_std": 0.1322875655532295,
       "parameters": 143540,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -65,16 +53,18 @@
     {
       "method": "sub_lewm",
       "label": "Sub-LeWM + CEM (Sub-JEPA regularizer)",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         3,
-        10
+        10,
+        7
       ],
-      "mean_success_rate": 0.325,
-      "sample_std": 0.24748737341529164,
+      "mean_success_rate": 0.3333333333333333,
+      "sample_std": 0.1755942292142123,
       "parameters": 143540,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -82,16 +72,18 @@
     {
       "method": "vlwm",
       "label": "VLWM + CEM (independent paper adaptation)",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         3,
-        5
+        5,
+        10
       ],
-      "mean_success_rate": 0.2,
-      "sample_std": 0.07071067811865475,
+      "mean_success_rate": 0.3,
+      "sample_std": 0.18027756377319948,
       "parameters": 105840,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -99,16 +91,18 @@
     {
       "method": "flexiworld",
       "label": "FlexiWorld + CEM (discrete adaptation)",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         8,
-        11
+        11,
+        9
       ],
-      "mean_success_rate": 0.47500000000000003,
-      "sample_std": 0.10606601717798214,
+      "mean_success_rate": 0.4666666666666667,
+      "sample_std": 0.07637626158259735,
       "parameters": 202688,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -116,16 +110,18 @@
     {
       "method": "flexiworld-direct",
       "label": "FlexiWorld Direct (same checkpoints)",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         8,
-        8
+        8,
+        11
       ],
-      "mean_success_rate": 0.4,
-      "sample_std": 0.0,
+      "mean_success_rate": 0.45,
+      "sample_std": 0.08660254037844388,
       "parameters": 202688,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -133,37 +129,57 @@
     {
       "method": "dreamerv1",
       "label": "Dreamer V1 (offline goal-conditioned)",
-      "completed_seeds": 0,
+      "completed_seeds": 3,
       "expected_seeds": 3,
-      "success_counts": [],
-      "mean_success_rate": null,
-      "sample_std": null,
-      "parameters": null,
-      "per_seed_false_stops": []
+      "success_counts": [
+        0,
+        1,
+        1
+      ],
+      "mean_success_rate": 0.03333333333333333,
+      "sample_std": 0.02886751345948129,
+      "parameters": 316486,
+      "per_seed_false_stops": [
+        0,
+        0,
+        0
+      ]
     },
     {
       "method": "dreamerv2",
       "label": "Dreamer V2 (offline goal-conditioned)",
-      "completed_seeds": 0,
+      "completed_seeds": 3,
       "expected_seeds": 3,
-      "success_counts": [],
-      "mean_success_rate": null,
-      "sample_std": null,
-      "parameters": null,
-      "per_seed_false_stops": []
+      "success_counts": [
+        1,
+        1,
+        0
+      ],
+      "mean_success_rate": 0.03333333333333333,
+      "sample_std": 0.02886751345948129,
+      "parameters": 256936,
+      "per_seed_false_stops": [
+        0,
+        0,
+        0
+      ]
     },
     {
       "method": "dreamerv3",
       "label": "Dreamer V3 (offline goal-conditioned)",
-      "completed_seeds": 1,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
+        5,
+        4,
         5
       ],
-      "mean_success_rate": 0.25,
-      "sample_std": null,
+      "mean_success_rate": 0.23333333333333334,
+      "sample_std": 0.02886751345948128,
       "parameters": 235148,
       "per_seed_false_stops": [
+        0,
+        0,
         0
       ]
     },

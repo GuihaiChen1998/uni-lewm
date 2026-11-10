@@ -70,6 +70,11 @@ def main():
                 config = meta.get("config", meta)
                 assert config["steps"] == 1000, run
                 assert config["dataset_sha256"] == digest(DATA), run
+                checkpoint = run / ("last.pkl" if model.startswith("dreamerv") else "last.pt")
+                assert report["checkpoint_sha256"] == digest(checkpoint), file
+                assert report["training_seed"] == seed, file
+                if model in {"dreamerv1", "dreamerv2"}:
+                    assert "initialization_seed_control" in meta, run
                 training.append(meta)
                 dest = args.reports / "training" / run.name
                 dest.mkdir(parents=True, exist_ok=True)
@@ -117,6 +122,7 @@ def main():
         "**Toy-scale/offline adaptations, not original-paper benchmark reproductions.**",
         "One grid environment; 20 fixed start/goal pairs; 30-action limit; 1,000 updates; three training seeds.",
         "See [full protocol](../../docs/BENCHMARKS.md) for sources and differences.",
+        "Muse's separate Kaggle run and ablation are discussed in the [issue #1 review](../muse_issue1_review.md).",
         "",
         "| Method | Successes / 20 by seed | Mean ± sample SD | Parameters |",
         "| --- | --- | --- | --- |",
@@ -147,6 +153,13 @@ def main():
     ]
     if missing:
         lines += ["Missing runs: " + ", ".join(missing), ""]
+    else:
+        lines += [
+            "![Success rates and individual seeds](success_rates.png)",
+            "",
+            "![Per-task outcomes across seeds](task_matrix.png)",
+            "",
+        ]
     (args.reports / "README.md").write_text("\n".join(lines))
     print(
         json.dumps(

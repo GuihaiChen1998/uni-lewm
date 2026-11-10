@@ -1,0 +1,12 @@
+{
+  "recorded_utc": "2026-11-10T01:29:26.757928+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "pytorch": "2.15.0+cpu",
+  "cuda_available": false,
+  "cpu_affinity_count": 3,
+  "cpu_cgroup_limit": "200000 100000",
+  "memory_cgroup_limit_bytes": 8589934592,
+  "runpod_resources_created": false,
+  "timing_caveat": "multiple concurrent CPU jobs; raw wall times are not a fair speed benchmark"
+}

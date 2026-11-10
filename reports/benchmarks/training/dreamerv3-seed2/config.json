@@ -1,0 +1,198 @@
+{
+  "loss_scales": {
+    "rec": 1.0,
+    "rew": 1.0,
+    "con": 1.0,
+    "dyn": 1.0,
+    "rep": 0.1,
+    "policy": 1.0,
+    "value": 1.0,
+    "repval": 0.3
+  },
+  "opt": {
+    "lr": 4e-05,
+    "agc": 0.3,
+    "eps": 1e-20,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "momentum": true,
+    "wd": 0.0,
+    "schedule": "const",
+    "warmup": 100,
+    "anneal": 0
+  },
+  "ac_grads": false,
+  "dyn": {
+    "typ": "rssm",
+    "rssm": {
+      "deter": 128,
+      "hidden": 64,
+      "stoch": 4,
+      "classes": 4,
+      "act": "silu",
+      "norm": "rms",
+      "unimix": 0.01,
+      "outscale": 1.0,
+      "winit": "trunc_normal_in",
+      "imglayers": 2,
+      "obslayers": 1,
+      "dynlayers": 1,
+      "absolute": false,
+      "blocks": 4,
+      "free_nats": 1.0
+    }
+  },
+  "enc": {
+    "typ": "simple",
+    "simple": {
+      "depth": 4,
+      "mults": [
+        2,
+        3,
+        4
+      ],
+      "layers": 3,
+      "units": 64,
+      "act": "silu",
+      "norm": "rms",
+      "winit": "trunc_normal_in",
+      "symlog": true,
+      "outer": false,
+      "kernel": 5,
+      "strided": false
+    }
+  },
+  "dec": {
+    "typ": "simple",
+    "simple": {
+      "depth": 4,
+      "mults": [
+        2,
+        3,
+        4
+      ],
+      "layers": 3,
+      "units": 64,
+      "act": "silu",
+      "norm": "rms",
+      "outscale": 1.0,
+      "winit": "trunc_normal_in",
+      "outer": false,
+      "kernel": 5,
+      "bspace": 8,
+      "strided": false
+    }
+  },
+  "rewhead": {
+    "layers": 1,
+    "units": 64,
+    "act": "silu",
+    "norm": "rms",
+    "output": "symexp_twohot",
+    "outscale": 0.0,
+    "winit": "trunc_normal_in",
+    "bins": 255
+  },
+  "conhead": {
+    "layers": 1,
+    "units": 64,
+    "act": "silu",
+    "norm": "rms",
+    "output": "binary",
+    "outscale": 1.0,
+    "winit": "trunc_normal_in"
+  },
+  "policy": {
+    "layers": 3,
+    "units": 64,
+    "act": "silu",
+    "norm": "rms",
+    "minstd": 0.1,
+    "maxstd": 1.0,
+    "outscale": 0.01,
+    "unimix": 0.01,
+    "winit": "trunc_normal_in"
+  },
+  "value": {
+    "layers": 3,
+    "units": 64,
+    "act": "silu",
+    "norm": "rms",
+    "output": "symexp_twohot",
+    "outscale": 0.0,
+    "winit": "trunc_normal_in",
+    "bins": 255
+  },
+  "policy_dist_disc": "categorical",
+  "policy_dist_cont": "bounded_normal",
+  "imag_last": 0,
+  "imag_length": 5,
+  "horizon": 333,
+  "contdisc": true,
+  "imag_loss": {
+    "slowtar": false,
+    "lam": 0.95,
+    "actent": 0.0003,
+    "slowreg": 1.0
+  },
+  "repl_loss": {
+    "slowtar": false,
+    "lam": 0.95,
+    "slowreg": 1.0
+  },
+  "slowvalue": {
+    "rate": 0.02,
+    "every": 1
+  },
+  "retnorm": {
+    "impl": "perc",
+    "rate": 0.01,
+    "limit": 1.0,
+    "perclo": 5.0,
+    "perchi": 95.0,
+    "debias": false
+  },
+  "valnorm": {
+    "impl": "none",
+    "rate": 0.01,
+    "limit": 1e-08
+  },
+  "advnorm": {
+    "impl": "none",
+    "rate": 0.01,
+    "limit": 1e-08
+  },
+  "reward_grad": true,
+  "repval_loss": true,
+  "repval_grad": true,
+  "report": false,
+  "report_gradnorms": false,
+  "logdir": "/workspace/work/fused-lewm/work/benchmark20/dreamerv3-seed2",
+  "seed": 2,
+  "jax": {
+    "platform": "cpu",
+    "compute_dtype": "float32",
+    "policy_devices": [
+      0
+    ],
+    "train_devices": [
+      0
+    ],
+    "mock_devices": 0,
+    "prealloc": false,
+    "jit": true,
+    "debug": false,
+    "expect_devices": 0,
+    "enable_policy": true,
+    "coordinator_address": "",
+    "profiler": false,
+    "precompile": false,
+    "transfer_guard": false
+  },
+  "batch_size": 16,
+  "batch_length": 6,
+  "replay_context": 0,
+  "report_length": 6,
+  "replica": 0,
+  "replicas": 1
+}

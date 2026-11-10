@@ -21,6 +21,8 @@ python scripts/benchmark_toy.py --steps 1000 --seeds 0 1 2
 ```
 
 Dreamer 使用各自独立的 JAX/TensorFlow 环境，详见比较协议。
+Muse 在 issue #1 提供的 Kaggle 复验和共享消融，另见[核对说明](reports/muse_issue1_review.md)；
+它们保留为独立来源，不与本地 CPU 结果混合。
 
 已实现：
 

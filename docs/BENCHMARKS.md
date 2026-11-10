@@ -56,6 +56,8 @@
 - 测试任务固定在 `data/toy_two_room/tasks20.json`。每个任务最多 30 个真实动作，
   任意时刻首次到达目标计成功。与训练轨迹可共享同一环境中的位置，不宣称图像状态完全未见。
   不用测试成功率挑 checkpoint，统一最后第 1,000 步，不调参挑 seed。
+  Dreamer 保留作者评估策略/后验采样行为，其随机性也受运行种子控制；三个种子的波动
+  因而包含训练和随机策略评估的影响，没有单独估计这两部分方差。
 - 公共 CEM：horizon 4、24 candidates、6 elites、2 iterations、seed 3002；每个环境步重规划，
   代价为最终预测 latent 与目标编码的均方距离。变长方法直接预测 4 步终点，
   Uni-LeWM/LeWM/Sub-LeWM 自回归预测。方法名称含 CEM 才使用该规划器。
@@ -94,6 +96,7 @@ for seed in 0 1 2; do
     --source work/upstream/dreamer-v2 --version 2 --seed "$seed" --steps 1000
 done
 python scripts/summarize_benchmarks.py
+work/dreamer-tf/bin/python scripts/plot_benchmarks.py
 ```
 
 Dreamer V1/V2 的兼容层将旧 Keras `experimental.mixed_precision` 名称映射到公开 API，

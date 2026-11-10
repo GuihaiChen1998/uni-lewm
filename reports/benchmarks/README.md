@@ -3,18 +3,19 @@
 **Toy-scale/offline adaptations, not original-paper benchmark reproductions.**
 One grid environment; 20 fixed start/goal pairs; 30-action limit; 1,000 updates; three training seeds.
 See [full protocol](../../docs/BENCHMARKS.md) for sources and differences.
+Muse's separate Kaggle run and ablation are discussed in the [issue #1 review](../muse_issue1_review.md).
 
 | Method | Successes / 20 by seed | Mean ± sample SD | Parameters |
 | --- | --- | --- | --- |
 | Uni-LeWM + CEM | 7, 4, 6 | 28.3% ± 7.6 pp | 58,224 |
-| LeWM + CEM (official modules, toy scale) | 1, 6 (incomplete) | 17.5% ± 17.7 pp | 143,540 |
-| Sub-LeWM + CEM (Sub-JEPA regularizer) | 3, 10 (incomplete) | 32.5% ± 24.7 pp | 143,540 |
-| VLWM + CEM (independent paper adaptation) | 3, 5 (incomplete) | 20.0% ± 7.1 pp | 105,840 |
-| FlexiWorld + CEM (discrete adaptation) | 8, 11 (incomplete) | 47.5% ± 10.6 pp | 202,688 |
-| FlexiWorld Direct (same checkpoints) | 8, 8 (incomplete) | 40.0% ± 0.0 pp | 202,688 |
-| Dreamer V1 (offline goal-conditioned) | pending (incomplete) | pending | pending |
-| Dreamer V2 (offline goal-conditioned) | pending (incomplete) | pending | pending |
-| Dreamer V3 (offline goal-conditioned) | 5 (incomplete) | 25.0% | 235,148 |
+| LeWM + CEM (official modules, toy scale) | 1, 6, 5 | 20.0% ± 13.2 pp | 143,540 |
+| Sub-LeWM + CEM (Sub-JEPA regularizer) | 3, 10, 7 | 33.3% ± 17.6 pp | 143,540 |
+| VLWM + CEM (independent paper adaptation) | 3, 5, 10 | 30.0% ± 18.0 pp | 105,840 |
+| FlexiWorld + CEM (discrete adaptation) | 8, 11, 9 | 46.7% ± 7.6 pp | 202,688 |
+| FlexiWorld Direct (same checkpoints) | 8, 8, 11 | 45.0% ± 8.7 pp | 202,688 |
+| Dreamer V1 (offline goal-conditioned) | 0, 1, 1 | 3.3% ± 2.9 pp | 316,486 |
+| Dreamer V2 (offline goal-conditioned) | 1, 1, 0 | 3.3% ± 2.9 pp | 256,936 |
+| Dreamer V3 (offline goal-conditioned) | 5, 4, 5 | 23.3% ± 2.9 pp | 235,148 |
 | Random | 5, 4, 3 | 20.0% ± 5.0 pp | 0 |
 | Oracle shortest path (privileged) | 20 | 100.0% | 0 |
 
@@ -26,4 +27,6 @@ Parameter counts describe the adapted networks; target/value copies and architec
 Recorded CPU wall times were measured during concurrent jobs and are not valid comparative speed measurements.
 Raw task actions, training configurations, metrics, and source revisions are included for audit.
 
-Missing runs: lewm-seed2.json, sub_lewm-seed2.json, vlwm-seed2.json, flexiworld-seed2.json, flexiworld-direct-seed2.json, dreamerv1-seed0.json, dreamerv1-seed1.json, dreamerv1-seed2.json, dreamerv2-seed0.json, dreamerv2-seed1.json, dreamerv2-seed2.json, dreamerv3-seed1.json, dreamerv3-seed2.json
+![Success rates and individual seeds](success_rates.png)
+
+![Per-task outcomes across seeds](task_matrix.png)

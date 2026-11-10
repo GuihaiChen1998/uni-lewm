@@ -77,6 +77,41 @@ def main():
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(directory / "success_rates.png", dpi=180)
     fig.savefig(directory / "success_rates.svg")
+    plt.close(fig)
+
+    matrix = []
+    for row in rows:
+        count = row["expected_seeds"]
+        trials = [
+            json.loads((directory / f"{row['method']}-seed{s}.json").read_text())
+            for s in range(count)
+        ]
+        matrix.append(
+            [sum(trial["results"][t]["reached"] for trial in trials) / count for t in range(20)]
+        )
+    fig, ax = plt.subplots(figsize=(11, 6))
+    heat = ax.imshow(matrix, vmin=0, vmax=1, cmap="Blues", aspect="auto")
+    ax.set_yticks(np.arange(len(rows)), labels)
+    ax.set_xticks(np.arange(20), np.arange(20))
+    ax.set_xlabel("Fixed task ID (same start/goal pairs for every method)")
+    ax.set_title("Per-task success across seeds", loc="left", fontweight="bold", pad=18)
+    colorbar = fig.colorbar(heat, ax=ax, fraction=0.035, pad=0.025)
+    colorbar.set_ticks([0, 1 / 3, 2 / 3, 1], labels=["0/3", "1/3", "2/3", "3/3"])
+    colorbar.set_label("Successful runs (oracle: one deterministic run)")
+    ax.set_xticks(np.arange(-0.5, 20, 1), minor=True)
+    ax.set_yticks(np.arange(-0.5, len(rows), 1), minor=True)
+    ax.grid(which="minor", color="white", linewidth=1)
+    ax.tick_params(which="minor", bottom=False, left=False)
+    fig.text(
+        0.02,
+        0.015,
+        "Toy-scale/offline adaptations. Three seeds on the same 20 tasks are not 60 independent tasks.",
+        fontsize=8,
+        color="#475569",
+    )
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(directory / "task_matrix.png", dpi=180)
+    fig.savefig(directory / "task_matrix.svg")
 
 
 if __name__ == "__main__":

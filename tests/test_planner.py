@@ -1,8 +1,11 @@
+import json
+from pathlib import Path
 from types import SimpleNamespace
 
 import torch
 from torch import nn
 
+from fused_lewm.evaluation import make_tasks
 from fused_lewm.grid import TwoRoomGrid
 from fused_lewm.planner import CEMPlanner, PlannerConfig
 
@@ -17,6 +20,14 @@ class KnownDynamics(nn.Module):
 
     def rollout(self, history, past_actions, future_actions):
         return history[:, -1:] + (2 * future_actions - 1).cumsum(1)[..., None]
+
+
+def test_default_sweep_tasks_match_committed_benchmark_tasks():
+    path = Path(__file__).resolve().parents[1] / "data/toy_two_room/tasks20.json"
+    manifest = json.loads(path.read_text())
+    expected = [(tuple(t["start"]), tuple(t["goal"])) for t in manifest["tasks"]]
+    env = TwoRoomGrid(manifest["grid_size"], manifest["image_size"])
+    assert make_tasks(env, 20, seed=3001) == expected
 
 
 def test_cem_reaches_known_goal_and_stops_only_from_observed_state():

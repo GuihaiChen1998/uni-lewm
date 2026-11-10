@@ -14,6 +14,16 @@ def image_tensor(image, device):
     return torch.from_numpy(image.copy()).float().div_(255).unsqueeze(0).to(device)
 
 
+def make_tasks(env, episodes, seed=3001):
+    """Legacy evaluator task generation; seed 3001 matches committed tasks20.json."""
+    rng = np.random.default_rng(seed)
+    tasks = []
+    for _ in range(episodes):
+        indices = rng.choice(len(env.cells), size=2, replace=False)
+        tasks.append((env.cells[int(indices[0])], env.cells[int(indices[1])]))
+    return tasks
+
+
 @torch.inference_mode()
 def calibrate_grid_stop(model, env, validation_cells):
     """Use held-out trajectory positions only; test episodes are not examined.
@@ -80,12 +90,8 @@ def evaluate(
     cfg = PlannerConfig(**(planner_config or payload["config"].get("planner", {})))
     planner = CEMPlanner(model, cfg, stop_threshold, seed=seed + 1)
     # Separate streams keep test tasks fixed across different controllers.
-    tasks_rng = np.random.default_rng(seed)
     action_rng = np.random.default_rng(seed + 2)
-    tasks = []
-    for _ in range(episodes):
-        indices = tasks_rng.choice(len(env.cells), size=2, replace=False)
-        tasks.append((env.cells[int(indices[0])], env.cells[int(indices[1])]))
+    tasks = make_tasks(env, episodes, seed)
     rows, all_times = [], []
     for index, (start, goal_position) in enumerate(tasks):
         obs = env.reset(start)

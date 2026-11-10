@@ -1,0 +1,207 @@
+{
+  "logdir": "/workspace/work/fused-lewm/work/benchmark20/dreamerv2-seed0",
+  "seed": 0,
+  "task": "dmc_walker_walk",
+  "envs": 1,
+  "envs_parallel": "none",
+  "render_size": [
+    64,
+    64
+  ],
+  "dmc_camera": -1,
+  "atari_grayscale": true,
+  "time_limit": 0,
+  "action_repeat": 1,
+  "steps": 100000000.0,
+  "log_every": 10000.0,
+  "eval_every": 100000.0,
+  "eval_eps": 1,
+  "prefill": 10000,
+  "pretrain": 1,
+  "train_every": 5,
+  "train_steps": 1,
+  "expl_until": 0,
+  "replay": {
+    "capacity": 2000000.0,
+    "ongoing": false,
+    "minlen": 50,
+    "maxlen": 50,
+    "prioritize_ends": true
+  },
+  "dataset": {
+    "batch": 16,
+    "length": 6
+  },
+  "log_keys_video": [
+    "image"
+  ],
+  "log_keys_sum": "^$",
+  "log_keys_mean": "^$",
+  "log_keys_max": "^$",
+  "precision": 32,
+  "jit": false,
+  "clip_rewards": "identity",
+  "expl_behavior": "greedy",
+  "expl_noise": 0.0,
+  "eval_noise": 0.0,
+  "eval_state_mean": false,
+  "grad_heads": [
+    "decoder",
+    "reward",
+    "discount"
+  ],
+  "pred_discount": true,
+  "rssm": {
+    "ensemble": 1,
+    "hidden": 64,
+    "deter": 128,
+    "stoch": 4,
+    "discrete": 4,
+    "act": "elu",
+    "norm": "none",
+    "std_act": "sigmoid2",
+    "min_std": 0.1
+  },
+  "encoder": {
+    "mlp_keys": "$^",
+    "cnn_keys": ".*",
+    "act": "elu",
+    "norm": "none",
+    "cnn_depth": 4,
+    "cnn_kernels": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "mlp_layers": [
+      400,
+      400,
+      400,
+      400
+    ]
+  },
+  "decoder": {
+    "mlp_keys": "$^",
+    "cnn_keys": ".*",
+    "act": "elu",
+    "norm": "none",
+    "cnn_depth": 4,
+    "cnn_kernels": [
+      5,
+      5,
+      6,
+      6
+    ],
+    "mlp_layers": [
+      400,
+      400,
+      400,
+      400
+    ]
+  },
+  "reward_head": {
+    "layers": 2,
+    "units": 64,
+    "act": "elu",
+    "norm": "none",
+    "dist": "mse"
+  },
+  "discount_head": {
+    "layers": 2,
+    "units": 64,
+    "act": "elu",
+    "norm": "none",
+    "dist": "binary"
+  },
+  "loss_scales": {
+    "kl": 1.0,
+    "reward": 1.0,
+    "discount": 1.0,
+    "proprio": 1.0
+  },
+  "kl": {
+    "free": 0.0,
+    "forward": false,
+    "balance": 0.8,
+    "free_avg": true
+  },
+  "model_opt": {
+    "opt": "adam",
+    "lr": 0.0001,
+    "eps": 1e-05,
+    "clip": 100,
+    "wd": 1e-06
+  },
+  "actor": {
+    "layers": 2,
+    "units": 64,
+    "act": "elu",
+    "norm": "none",
+    "dist": "onehot",
+    "min_std": 0.1
+  },
+  "critic": {
+    "layers": 2,
+    "units": 64,
+    "act": "elu",
+    "norm": "none",
+    "dist": "mse"
+  },
+  "actor_opt": {
+    "opt": "adam",
+    "lr": 8e-05,
+    "eps": 1e-05,
+    "clip": 100,
+    "wd": 1e-06
+  },
+  "critic_opt": {
+    "opt": "adam",
+    "lr": 0.0002,
+    "eps": 1e-05,
+    "clip": 100,
+    "wd": 1e-06
+  },
+  "discount": 0.99,
+  "discount_lambda": 0.95,
+  "imag_horizon": 5,
+  "actor_grad": "reinforce",
+  "actor_grad_mix": 0.1,
+  "actor_ent": 0.002,
+  "slow_target": true,
+  "slow_target_update": 100,
+  "slow_target_fraction": 1,
+  "slow_baseline": true,
+  "reward_norm": {
+    "momentum": 1.0,
+    "scale": 1.0,
+    "eps": 1e-08
+  },
+  "expl_intr_scale": 1.0,
+  "expl_extr_scale": 0.0,
+  "expl_opt": {
+    "opt": "adam",
+    "lr": 0.0003,
+    "eps": 1e-05,
+    "clip": 100,
+    "wd": 1e-06
+  },
+  "expl_head": {
+    "layers": 4,
+    "units": 400,
+    "act": "elu",
+    "norm": "none",
+    "dist": "mse"
+  },
+  "expl_reward_norm": {
+    "momentum": 1.0,
+    "scale": 1.0,
+    "eps": 1e-08
+  },
+  "disag_target": "stoch",
+  "disag_log": false,
+  "disag_models": 10,
+  "disag_offset": 1,
+  "disag_action_cond": true,
+  "expl_model_loss": "kl"
+}
