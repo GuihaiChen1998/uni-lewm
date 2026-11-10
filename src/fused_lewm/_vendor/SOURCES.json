@@ -1,0 +1,23 @@
+{
+  "lewm": {
+    "repository": "https://github.com/lucas-maes/le-wm",
+    "commit": "8edfeb336732b5f3ce7b8b210d0ba370a09e2cac",
+    "files": {"module.py": "lewm.py"},
+    "changes": "None",
+    "license": "LICENSE-lewm"
+  },
+  "subjepa": {
+    "repository": "https://github.com/intcomp/Sub-JEPA",
+    "commit": "ef945ed434ce529bc7c5f1995f2e1cf173954843",
+    "files": {"subjepa.py": "subjepa.py"},
+    "changes": "None",
+    "license": "LICENSE-subjepa"
+  },
+  "flexiworld": {
+    "repository": "https://github.com/Shidu-Ren/FlexiWorld",
+    "commit": "a8cc04dd63ce3c19c4f7fc7ef8e3776492f319a1",
+    "files": {"src/flexiworld/models/layers.py": "flexi_layers.py", "src/flexiworld/models/action.py": "flexi_action.py"},
+    "changes": "One import in action.py redirected to local flexi_layers; algorithms unchanged",
+    "license": "LICENSE-flexiworld"
+  }
+}

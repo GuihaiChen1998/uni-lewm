@@ -2,6 +2,26 @@
 
 这是根据本次讨论实现的独立 PyTorch 原型。**它不是官方 LeWM 的完整复现，也不加载原版 checkpoint。** 这里的 `TwoRoomGrid` 是离散二维玩具环境，不是论文使用的官方 TwoRoom benchmark。
 
+## 20 个固定任务的比较
+
+代码和真实生成的数据已随仓库提供：[数据和划分](data/toy_two_room/README.md)、
+[固定测试任务](data/toy_two_room/tasks20.json)、[结果与逐任务记录](reports/benchmarks/README.md)、
+[完整比较协议与复现命令](docs/BENCHMARKS.md)。这里的“20 个任务”指一个网格环境中的
+20 个起点—目标组合，并非 20 种环境。
+
+比较包含 Uni-LeWM、LeWM、LeWM + Sub-JEPA、VLWM、FlexiWorld（CEM 和 Direct）、
+Dreamer V1/V2/V3，以及随机策略和最短路上限。每个学习模型使用相同训练数据、
+1,000 次更新、3 个训练种子。LeWM/Sub-JEPA/FlexiWorld 使用作者核心模块，
+VLWM 是独立论文适配，Dreamer 使用作者完整 agent 的离线目标条件适配。
+**这些都是缩小规模的玩具实验，不是原论文结果复现；各方法的适配差异见协议。**
+
+```bash
+python -m pip install -e '.[dev,benchmarks]'
+python scripts/benchmark_toy.py --steps 1000 --seeds 0 1 2
+```
+
+Dreamer 使用各自独立的 JAX/TensorFlow 环境，详见比较协议。
+
 已实现：
 
 - 同一个 Transformer 主干与读出头处理图像编码和 latent 动力学预测。
@@ -68,14 +88,14 @@ from fused_lewm import ModelConfig, WorldModel
 
 model = WorldModel(ModelConfig()).eval()
 image = torch.rand(1, 3, 32, 32)
-z0 = model.encode(image)                 # [1, 192]
+z0 = model.encode(image)  # [1, 192]
 goal = model.encode_goal(image)
-assert torch.equal(z0, goal.state)       # 同图像的起点/目标语义对齐
-assert goal.outgoing[0, -1] == 1         # 固定终止标签，不是学到的 policy
+assert torch.equal(z0, goal.state)  # 同图像的起点/目标语义对齐
+assert goal.outgoing[0, -1] == 1  # 固定终止标签，不是学到的 policy
 
-history = z0[:, None]                    # [B,L,D]
+history = z0[:, None]  # [B,L,D]
 past = torch.empty(1, 0, dtype=torch.long)
-actions = torch.tensor([[0, 3, 1]])      # [B,H]，进入下一步的实际动作
+actions = torch.tensor([[0, 3, 1]])  # [B,H]，进入下一步的实际动作
 future = model.rollout(history, past, actions)
 assert future.shape == (1, 3, 192)
 assert model.trunk is model.dynamics_trunk

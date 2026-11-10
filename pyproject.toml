@@ -12,6 +12,7 @@ dependencies = ["torch>=2.3", "numpy>=1.24", "Pillow>=10"]
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]
 mcp = ["mcp>=1.10"]
+benchmarks = ["einops==0.8.2", "transformers==4.57.6"]
 
 [project.scripts]
 fused-lewm = "fused_lewm.cli:main"
@@ -26,4 +27,8 @@ pythonpath = ["src"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+extend-exclude = ["**/_vendor", "build", "dist", "work"]
+
+[tool.setuptools.package-data]
+"fused_lewm._vendor" = ["LICENSE-*", "SOURCES.json"]
 

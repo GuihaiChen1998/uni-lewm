@@ -8,6 +8,8 @@ work/
 *.npz
 !data/**/*.npz
 node_modules/
+build/
+dist/
 .env
 .env.*
 !.env.example

@@ -1,0 +1,12 @@
+method,label,completed_seeds,expected_seeds,success_counts,mean_success_rate,sample_std,parameters,per_seed_false_stops
+uni_lewm,Uni-LeWM + CEM,2,3,"[7, 4]",0.275,0.1060660171779821,58224,"[0, 0]"
+lewm,"LeWM + CEM (official modules, toy scale)",2,3,"[1, 6]",0.175,0.17677669529663687,143540,"[0, 0]"
+sub_lewm,Sub-LeWM + CEM (Sub-JEPA regularizer),2,3,"[3, 10]",0.325,0.24748737341529164,143540,"[0, 0]"
+vlwm,VLWM + CEM (independent paper adaptation),2,3,"[3, 5]",0.2,0.07071067811865475,105840,"[0, 0]"
+flexiworld,FlexiWorld + CEM (discrete adaptation),2,3,"[8, 11]",0.47500000000000003,0.10606601717798214,202688,"[0, 0]"
+flexiworld-direct,FlexiWorld Direct (same checkpoints),2,3,"[8, 8]",0.4,0.0,202688,"[0, 0]"
+dreamerv1,Dreamer V1 (offline goal-conditioned),1,3,[1],0.05,,316486,[0]
+dreamerv2,Dreamer V2 (offline goal-conditioned),1,3,[1],0.05,,256936,[0]
+dreamerv3,Dreamer V3 (offline goal-conditioned),1,3,[5],0.25,,235148,[0]
+random,Random,3,3,"[5, 4, 3]",0.2,0.05,0,"[0, 0, 0]"
+oracle_shortest_path,Oracle shortest path (privileged),1,1,[20],1.0,,0,[0]

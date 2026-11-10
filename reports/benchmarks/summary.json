@@ -1,0 +1,210 @@
+{
+  "protocol": "docs/BENCHMARKS.md",
+  "updates_per_model": 1000,
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "task_count": 20,
+  "distinct_environments": 1,
+  "dataset_sha256": "f8b136184ec4b16bb1bdd0b715738586d6e41f734e82d7fe73dc9052b834ccdd",
+  "tasks_sha256": "d03b284a0cd88ea755b939c1ebc60d9589159d30ea652b160ddb34e59e35bb7c",
+  "missing": [
+    "uni_lewm-seed2.json",
+    "lewm-seed2.json",
+    "sub_lewm-seed2.json",
+    "vlwm-seed2.json",
+    "flexiworld-seed2.json",
+    "flexiworld-direct-seed2.json",
+    "dreamerv1-seed1.json",
+    "dreamerv1-seed2.json",
+    "dreamerv2-seed1.json",
+    "dreamerv2-seed2.json",
+    "dreamerv3-seed1.json",
+    "dreamerv3-seed2.json"
+  ],
+  "rows": [
+    {
+      "method": "uni_lewm",
+      "label": "Uni-LeWM + CEM",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        7,
+        4
+      ],
+      "mean_success_rate": 0.275,
+      "sample_std": 0.1060660171779821,
+      "parameters": 58224,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "lewm",
+      "label": "LeWM + CEM (official modules, toy scale)",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        1,
+        6
+      ],
+      "mean_success_rate": 0.175,
+      "sample_std": 0.17677669529663687,
+      "parameters": 143540,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "sub_lewm",
+      "label": "Sub-LeWM + CEM (Sub-JEPA regularizer)",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        3,
+        10
+      ],
+      "mean_success_rate": 0.325,
+      "sample_std": 0.24748737341529164,
+      "parameters": 143540,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "vlwm",
+      "label": "VLWM + CEM (independent paper adaptation)",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        3,
+        5
+      ],
+      "mean_success_rate": 0.2,
+      "sample_std": 0.07071067811865475,
+      "parameters": 105840,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "flexiworld",
+      "label": "FlexiWorld + CEM (discrete adaptation)",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        8,
+        11
+      ],
+      "mean_success_rate": 0.47500000000000003,
+      "sample_std": 0.10606601717798214,
+      "parameters": 202688,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "flexiworld-direct",
+      "label": "FlexiWorld Direct (same checkpoints)",
+      "completed_seeds": 2,
+      "expected_seeds": 3,
+      "success_counts": [
+        8,
+        8
+      ],
+      "mean_success_rate": 0.4,
+      "sample_std": 0.0,
+      "parameters": 202688,
+      "per_seed_false_stops": [
+        0,
+        0
+      ]
+    },
+    {
+      "method": "dreamerv1",
+      "label": "Dreamer V1 (offline goal-conditioned)",
+      "completed_seeds": 1,
+      "expected_seeds": 3,
+      "success_counts": [
+        1
+      ],
+      "mean_success_rate": 0.05,
+      "sample_std": null,
+      "parameters": 316486,
+      "per_seed_false_stops": [
+        0
+      ]
+    },
+    {
+      "method": "dreamerv2",
+      "label": "Dreamer V2 (offline goal-conditioned)",
+      "completed_seeds": 1,
+      "expected_seeds": 3,
+      "success_counts": [
+        1
+      ],
+      "mean_success_rate": 0.05,
+      "sample_std": null,
+      "parameters": 256936,
+      "per_seed_false_stops": [
+        0
+      ]
+    },
+    {
+      "method": "dreamerv3",
+      "label": "Dreamer V3 (offline goal-conditioned)",
+      "completed_seeds": 1,
+      "expected_seeds": 3,
+      "success_counts": [
+        5
+      ],
+      "mean_success_rate": 0.25,
+      "sample_std": null,
+      "parameters": 235148,
+      "per_seed_false_stops": [
+        0
+      ]
+    },
+    {
+      "method": "random",
+      "label": "Random",
+      "completed_seeds": 3,
+      "expected_seeds": 3,
+      "success_counts": [
+        5,
+        4,
+        3
+      ],
+      "mean_success_rate": 0.2,
+      "sample_std": 0.05,
+      "parameters": 0,
+      "per_seed_false_stops": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "method": "oracle_shortest_path",
+      "label": "Oracle shortest path (privileged)",
+      "completed_seeds": 1,
+      "expected_seeds": 1,
+      "success_counts": [
+        20
+      ],
+      "mean_success_rate": 1.0,
+      "sample_std": null,
+      "parameters": 0,
+      "per_seed_false_stops": [
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+fused-lewm = fused_lewm.cli:main
