@@ -11,14 +11,15 @@
   "dataset_sha256": "f8b136184ec4b16bb1bdd0b715738586d6e41f734e82d7fe73dc9052b834ccdd",
   "tasks_sha256": "d03b284a0cd88ea755b939c1ebc60d9589159d30ea652b160ddb34e59e35bb7c",
   "missing": [
-    "uni_lewm-seed2.json",
     "lewm-seed2.json",
     "sub_lewm-seed2.json",
     "vlwm-seed2.json",
     "flexiworld-seed2.json",
     "flexiworld-direct-seed2.json",
+    "dreamerv1-seed0.json",
     "dreamerv1-seed1.json",
     "dreamerv1-seed2.json",
+    "dreamerv2-seed0.json",
     "dreamerv2-seed1.json",
     "dreamerv2-seed2.json",
     "dreamerv3-seed1.json",
@@ -28,16 +29,18 @@
     {
       "method": "uni_lewm",
       "label": "Uni-LeWM + CEM",
-      "completed_seeds": 2,
+      "completed_seeds": 3,
       "expected_seeds": 3,
       "success_counts": [
         7,
-        4
+        4,
+        6
       ],
-      "mean_success_rate": 0.275,
-      "sample_std": 0.1060660171779821,
+      "mean_success_rate": 0.2833333333333333,
+      "sample_std": 0.07637626158259732,
       "parameters": 58224,
       "per_seed_false_stops": [
+        0,
         0,
         0
       ]
@@ -130,32 +133,24 @@
     {
       "method": "dreamerv1",
       "label": "Dreamer V1 (offline goal-conditioned)",
-      "completed_seeds": 1,
+      "completed_seeds": 0,
       "expected_seeds": 3,
-      "success_counts": [
-        1
-      ],
-      "mean_success_rate": 0.05,
+      "success_counts": [],
+      "mean_success_rate": null,
       "sample_std": null,
-      "parameters": 316486,
-      "per_seed_false_stops": [
-        0
-      ]
+      "parameters": null,
+      "per_seed_false_stops": []
     },
     {
       "method": "dreamerv2",
       "label": "Dreamer V2 (offline goal-conditioned)",
-      "completed_seeds": 1,
+      "completed_seeds": 0,
       "expected_seeds": 3,
-      "success_counts": [
-        1
-      ],
-      "mean_success_rate": 0.05,
+      "success_counts": [],
+      "mean_success_rate": null,
       "sample_std": null,
-      "parameters": 256936,
-      "per_seed_false_stops": [
-        0
-      ]
+      "parameters": null,
+      "per_seed_false_stops": []
     },
     {
       "method": "dreamerv3",

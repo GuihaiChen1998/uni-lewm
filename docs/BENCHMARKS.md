@@ -36,6 +36,8 @@
   所有方法使用相同 episode ID 划分；所有图像均来自同一个 NPZ。
 - 每个模型训练 1,000 次优化更新，batch 16，每个样本 6 帧，训练种子 0、1、2。
   相同更新次数不代表 FLOPs、参数量、采样顺序或监督目标完全相同。
+  TensorFlow 通过 `keras.utils.set_random_seed` 同时控制 Python、NumPy 和 TensorFlow，
+  包括 Keras 初始化器使用的 Python 随机数；遗漏该项的早期诊断已全部作废并重跑。
 - 五个 PyTorch 模型统一宽 48、trunk depth 2、history 2、最大预测长度 4。
   LeWM/Sub-LeWM 训练 4 个 teacher-forced 单步目标；Uni-LeWM 训练 4 步自回归目标；
   VLWM 随 curriculum 抽取一个跳长；FlexiWorld 均匀抽取一个跳长，并训练局部/最终目标 actor。

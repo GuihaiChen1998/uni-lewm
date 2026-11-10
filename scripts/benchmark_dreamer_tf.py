@@ -35,16 +35,18 @@ def main():
     parser.add_argument("--version", type=int, choices=[1, 2], required=True)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--steps", type=int, default=1000)
+    parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--run-root", type=Path, default=ROOT / "work/benchmark20")
     parser.add_argument("--report-root", type=Path, default=ROOT / "reports/benchmarks")
     args = parser.parse_args()
     import gym
     import tensorflow as tf
 
-    tf.config.threading.set_inter_op_parallelism_threads(2)
-    tf.config.threading.set_intra_op_parallelism_threads(2)
-    tf.random.set_seed(args.seed)
-    np.random.seed(args.seed)
+    tf.config.threading.set_inter_op_parallelism_threads(1)
+    tf.config.threading.set_intra_op_parallelism_threads(args.threads)
+    # Keras initializers also draw from Python's random module. Setting only
+    # tf.random and NumPy seeds does NOT reproduce the model initialization.
+    tf.keras.utils.set_random_seed(args.seed)
     # Removed Keras 'experimental' namespace. Use the public float32 APIs.
     public = tf.keras.mixed_precision
     shim = types.SimpleNamespace(
@@ -238,6 +240,9 @@ def main():
         upstream_commit=commit,
         training_seconds=time.perf_counter() - started,
         parameters=int(sum(np.prod(x.shape) for x in model.trainable_variables)),
+        initialization_seed_control="keras.utils.set_random_seed (Python, NumPy, TensorFlow)",
+        cpu_intra_threads=args.threads,
+        cpu_inter_threads=1,
     )
     (run / "training.json").write_text(json.dumps(summary, indent=2) + "\n")
     batch = data.next()
