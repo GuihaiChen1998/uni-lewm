@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs><rect width="1800" height="1100" fill="white"/><g font-family="DejaVu Sans">
+<path d="M45 55 Q15 60 28 130 L28 640 Q25 690 85 685 L1110 685 Q1170 690 1165 630 L1160 105 Q1160 50 1090 52Z" fill="#fff0e7"/>
+<path d="M1240 55 Q1200 55 1205 115 L1205 1005 Q1205 1060 1260 1050 L1735 1052 Q1780 1055 1774 990 L1775 110 Q1775 55 1730 55Z" fill="#eaf3fa"/>
+<path d="M55 735 Q25 735 28 785 L28 1000 Q25 1050 80 1050 L1105 1050 Q1165 1052 1165 995 L1165 785 Q1165 735 1100 735Z" fill="#f1eafa"/>
+<text x="65" y="104" font-size="25.6" font-weight="bold" fill="#26313c" text-anchor="start">(a) One shared latent world model</text>
+<text x="1240" y="104" font-size="22.400000000000002" font-weight="bold" fill="#26313c" text-anchor="start">(b) Goal-conditioned MPC</text>
+<text x="65" y="783" font-size="23.200000000000003" font-weight="bold" fill="#26313c" text-anchor="start">(c) Joint training</text>
+<rect x="70" y="150" width="91" height="83" rx="15" fill="#fff9ef" stroke="#344653" stroke-width="2.4"/>
+<path d="M115,155 V178 M115,199 V228" stroke="#7d746b" stroke-width="4"/>
+<rect x="85" y="202" width="15" height="15" rx="2" fill="#97c8df" stroke="#486c7a" stroke-width="2.4"/>
+<text x="115" y="260" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">current oₜ</text>
+<rect x="175" y="150" width="91" height="83" rx="15" fill="#fff9ef" stroke="#344653" stroke-width="2.4"/>
+<path d="M220,155 V178 M220,199 V228" stroke="#7d746b" stroke-width="4"/>
+<rect x="190" y="202" width="15" height="15" rx="2" fill="#97c8df" stroke="#486c7a" stroke-width="2.4"/>
+<text x="220" y="260" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">future oₜ₊ₕ</text>
+<rect x="280" y="150" width="91" height="83" rx="15" fill="#fff9ef" stroke="#344653" stroke-width="2.4"/>
+<path d="M325,155 V178 M325,199 V228" stroke="#7d746b" stroke-width="4"/>
+<rect x="295" y="202" width="15" height="15" rx="2" fill="#97c8df" stroke="#486c7a" stroke-width="2.4"/>
+<text x="325" y="260" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">goal o_g</text>
+<text x="70" y="295" font-size="14.4" font-weight="normal" fill="#6b5e72" text-anchor="start">future frames: training only</text>
+<text x="390" y="300" font-size="17.6" font-weight="normal" fill="#26313c" text-anchor="middle">Image tokens</text>
+<rect x="323" y="323" width="40" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="343.0" y="349" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">▧</text>
+<rect x="370" y="323" width="40" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="390.0" y="349" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">▧</text>
+<rect x="417" y="323" width="40" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="437.0" y="349" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">∅</text>
+<text x="390" y="389" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">+ NULL</text>
+<path d="M371 190 H470 V310 H343 V323" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M457 342 H485" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="465" y="320" font-size="14.4" font-weight="normal" fill="#26313c" text-anchor="middle">spatial</text>
+<rect x="490" y="165" width="300" height="370" rx="24" fill="#fbd7c2" stroke="#835a45" stroke-width="2.4"/>
+<text x="640" y="232" font-size="27.200000000000003" font-weight="bold" fill="#26313c" text-anchor="middle">Shared</text>
+<text x="640" y="276" font-size="24.0" font-weight="bold" fill="#26313c" text-anchor="middle">Transformer Fθ</text>
+<rect x="540" y="310" width="200" height="12" rx="4" fill="#f7bd9f" stroke="#ab785e" stroke-width="2.4"/>
+<rect x="540" y="331" width="200" height="12" rx="4" fill="#f7bd9f" stroke="#ab785e" stroke-width="2.4"/>
+<rect x="540" y="352" width="200" height="12" rx="4" fill="#f7bd9f" stroke="#ab785e" stroke-width="2.4"/>
+<path d="M510 395 H770" stroke="#a87359" stroke-width="2"/>
+<text x="640" y="440" font-size="21.6" font-weight="bold" fill="#26313c" text-anchor="middle">Shared readout</text>
+<text x="640" y="477" font-size="14.4" font-weight="normal" fill="#26313c" text-anchor="middle">same trainable weights</text>
+<text x="80" y="385" font-size="19.200000000000003" font-weight="bold" fill="#26313c" text-anchor="start">State history</text>
+<rect x="75" y="400" width="67" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="108.5" y="426" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ₋₁</text>
+<rect x="149" y="400" width="67" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="182.5" y="426" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ</text>
+<text x="80" y="493" font-size="16.8" font-weight="bold" fill="#26313c" text-anchor="start">Physical actions</text>
+<rect x="75" y="508" width="67" height="38" rx="15" fill="#d8eaf8" stroke="#344653" stroke-width="2.4"/>
+<text x="108.5" y="534" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">aₜ₋₁</text>
+<rect x="149" y="508" width="67" height="38" rx="15" fill="#d8eaf8" stroke="#344653" stroke-width="2.4"/>
+<text x="182.5" y="534" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">aₜ</text>
+<text x="365" y="415" font-size="16.8" font-weight="normal" fill="#26313c" text-anchor="middle">Latent–action</text>
+<text x="365" y="443" font-size="16.8" font-weight="normal" fill="#26313c" text-anchor="middle">tokens</text>
+<rect x="280" y="459" width="35" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="297.5" y="485" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">z</text>
+<rect x="322" y="459" width="35" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="339.5" y="485" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">a</text>
+<rect x="364" y="459" width="35" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="381.5" y="485" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">z</text>
+<rect x="406" y="459" width="35" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="423.5" y="485" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">a</text>
+<path d="M215 421 H265 V478 H280" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M215 527 H265 V478" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M447 478 H490" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="470" y="515" font-size="14.4" font-weight="normal" fill="#26313c" text-anchor="middle">causal</text>
+<text x="937" y="159" font-size="20.0" font-weight="bold" fill="#26313c" text-anchor="middle">Encoded states</text>
+<rect x="823" y="185" width="75" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="860.5" y="211" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ</text>
+<rect x="905" y="185" width="75" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="942.5" y="211" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ₊ₕ</text>
+<rect x="987" y="185" width="75" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="1024.5" y="211" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">z_g</text>
+<path d="M790 220 H818" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="808" y="253" font-size="13.600000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">read</text>
+<text x="945" y="405" font-size="20.0" font-weight="bold" fill="#26313c" text-anchor="middle">Latent rollout</text>
+<rect x="825" y="430" width="75" height="38" rx="15" fill="#eadcf7" stroke="#344653" stroke-width="2.4"/>
+<text x="862.5" y="456" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">ẑₜ₊₁</text>
+<rect x="907" y="430" width="75" height="38" rx="15" fill="#eadcf7" stroke="#344653" stroke-width="2.4"/>
+<text x="944.5" y="456" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">…</text>
+<rect x="989" y="430" width="75" height="38" rx="15" fill="#eadcf7" stroke="#344653" stroke-width="2.4"/>
+<text x="1026.5" y="456" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">ẑₜ₊H</text>
+<path d="M790 440 H823" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="804" y="415" font-size="13.600000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">predict</text>
+<path d="M860 184 V130 H55 V420 H74" fill="none" stroke="#5f8468" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="170" y="128" font-size="14.4" font-weight="normal" fill="#446d50" text-anchor="start">observed state</text>
+<path d="M945 470 V625 H50 V421 H74" fill="none" stroke="#77609b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="605" y="658" font-size="16.8" font-weight="normal" fill="#6d557f" text-anchor="middle">autoregressive latent update · no future images</text>
+<text x="75" y="598" font-size="15.200000000000001" font-weight="normal" fill="#705d55" text-anchor="start">Separate spatial / causal tokenization and attention masks</text>
+<text x="75" y="835" font-size="17.6" font-weight="bold" fill="#26313c" text-anchor="start">Encoded future targets</text>
+<rect x="75" y="855" width="95" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="122.5" y="881" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ₊ₕ</text>
+<text x="75" y="941" font-size="17.6" font-weight="bold" fill="#26313c" text-anchor="start">Predicted future states</text>
+<rect x="75" y="960" width="95" height="38" rx="15" fill="#e7ddf5" stroke="#344653" stroke-width="2.4"/>
+<text x="122.5" y="986" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">ẑₜ₊ₕ</text>
+<rect x="325" y="868" width="165" height="100" rx="15" fill="#fff" stroke="#344653" stroke-width="2.4"/>
+<text x="408" y="925" font-size="16.8" font-weight="bold" fill="#26313c" text-anchor="middle">Multi-step MSE</text>
+<path d="M175 875 H280 V900 H325" fill="none" stroke="#80669b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<path d="M175 981 H280 V939 H325" fill="none" stroke="#80669b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="590" y="834" font-size="17.6" font-weight="bold" fill="#26313c" text-anchor="start">Encoded states z</text>
+<rect x="585" y="862" width="170" height="67" rx="15" fill="#fff" stroke="#344653" stroke-width="2.4"/>
+<text x="670" y="904" font-size="19.200000000000003" font-weight="normal" fill="#26313c" text-anchor="middle">SIGReg(z)</text>
+<path d="M670 842 V861" fill="none" stroke="#80669b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<rect x="800" y="845" width="330" height="84" rx="15" fill="#fff" stroke="#344653" stroke-width="2.4"/>
+<text x="920" y="885" font-size="17.6" font-weight="bold" fill="#26313c" text-anchor="middle">L = MSE + λ SIGReg(z)</text>
+<path d="M490 919 H540 V1000 H775 V887 H800" fill="none" stroke="#80669b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<path d="M755 895 H800" fill="none" stroke="#80669b" stroke-width="2.7" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="925" y="951" font-size="17.6" font-weight="normal" fill="#26313c" text-anchor="middle">Both branches</text>
+<text x="925" y="982" font-size="17.6" font-weight="normal" fill="#26313c" text-anchor="middle">receive gradients</text>
+<text x="70" y="1023" font-size="14.4" font-weight="normal" fill="#6a567b" text-anchor="start">Shared readout weights; modality-specific BatchNorm statistics.</text>
+<text x="1245" y="158" font-size="16.8" font-weight="bold" fill="#26313c" text-anchor="start">Encode observation and goal with Fθ</text>
+<rect x="1300" y="185" width="130" height="38" rx="15" fill="#ddebdc" stroke="#344653" stroke-width="2.4"/>
+<text x="1365.0" y="211" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">zₜ</text>
+<rect x="1437" y="185" width="130" height="38" rx="15" fill="#ddebdc" stroke="#344653" stroke-width="2.4"/>
+<text x="1502.0" y="211" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">z_g</text>
+<rect x="1260" y="265" width="450" height="335" rx="20" fill="#f9fcff" stroke="#5985a2" stroke-width="2.4"/>
+<text x="1485" y="307" font-size="21.6" font-weight="bold" fill="#26313c" text-anchor="middle">CEM / MPC</text>
+<text x="1300" y="355" font-size="16.0" font-weight="normal" fill="#26313c" text-anchor="start">Sample candidate action sequences</text>
+<text x="1300" y="416" font-size="17.6" font-weight="bold" fill="#26313c" text-anchor="start">Latent rollout · reuse Fθ</text>
+<text x="1300" y="492" font-size="19.200000000000003" font-weight="normal" fill="#26313c" text-anchor="start">J = ‖ẑₜ₊H − z_g‖² / d</text>
+<path d="M1480 368 V388" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M1480 430 V464" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M1630 505 H1680 V352 H1650" fill="none" stroke="#5985a2" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="1295" y="558" font-size="15.200000000000001" font-weight="normal" fill="#3f6783" text-anchor="start">Update elite action distributions</text>
+<path d="M1370 224 V264" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<path d="M1580 224 V250 H1735 V489 H1710" fill="none" stroke="#5985a2" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="1245" y="650" font-size="17.6" font-weight="bold" fill="#9c4d46" text-anchor="start">STOP if ‖zₜ − z_g‖² / d ≤ ε</text>
+<text x="1245" y="680" font-size="14.4" font-weight="normal" fill="#765e60" text-anchor="start">using the current observed state</text>
+<path d="M1260 550 H1230 V775 H1405" fill="none" stroke="#344653" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="1280" y="745" font-size="16.0" font-weight="normal" fill="#26313c" text-anchor="start">first action</text>
+<rect x="1405" y="735" width="91" height="83" rx="15" fill="#fff9ef" stroke="#344653" stroke-width="2.4"/>
+<path d="M1450,740 V763 M1450,784 V813" stroke="#7d746b" stroke-width="4"/>
+<rect x="1420" y="787" width="15" height="15" rx="2" fill="#97c8df" stroke="#486c7a" stroke-width="2.4"/>
+<text x="1450" y="845" font-size="15.200000000000001" font-weight="normal" fill="#26313c" text-anchor="middle">Environment</text>
+<path d="M1496 775 H1740 V147 H1680" fill="none" stroke="#5985a2" stroke-width="2.7" marker-end="url(#arr)"/>
+<text x="1695" y="930" font-size="15.200000000000001" font-weight="normal" fill="#456c86" text-anchor="middle">new</text>
+<text x="1695" y="958" font-size="15.200000000000001" font-weight="normal" fill="#456c86" text-anchor="middle">observation</text>
+<text x="1245" y="1015" font-size="15.200000000000001" font-weight="normal" fill="#456c86" text-anchor="start">Goal enters the cost, not dynamics.</text>
+</g></svg>

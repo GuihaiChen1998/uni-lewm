@@ -1,0 +1,52 @@
+{
+  "recommended": "uni-lewm-pastel.pdf",
+  "formats": {
+    "illustrated": "editable SVG and vector PDF",
+    "pastel": "editable SVG and vector PDF",
+    "dual-loop": "native raster PNG and raster PDF wrapper"
+  },
+  "inspection": "parent inspected all three delivered compositions against model/loss/planner implementation",
+  "caveat": "Dual-loop state-history line is partly occluded behind shared stack; labels/endpoints remain visible. Native illustrated/pastel drafts had connector defects; use corrected vector deliverables.",
+  "files": {
+    "uni-lewm-illustrated.pdf": {
+      "sha256": "9047af29c6d04932d5f5aa55dbb9a3faf2862274fcd57ef8b59b7b52b0b22290",
+      "bytes": 35367
+    },
+    "uni-lewm-pastel.pdf": {
+      "sha256": "da12e8cea5869e052fe070686863bb6b5fb870911aa444f7fe7554ef1366bd0d",
+      "bytes": 39261
+    },
+    "overview.tex": {
+      "sha256": "e20fe1812952ca18f2001c19f2d20b9a614f8e4280647b15503f734d60f0f3a3",
+      "bytes": 249
+    },
+    "uni-lewm-pastel.png": {
+      "sha256": "5b814c59111ac1de3c1aac8d80c103fadac280a8825ca1b991ed2dc53a09b845",
+      "bytes": 286183
+    },
+    "caption.tex": {
+      "sha256": "efa9479335d81840e8930ea9baee49293fa396ee28e81a3597dedcafa4b87f39",
+      "bytes": 740
+    },
+    "uni-lewm-pastel.svg": {
+      "sha256": "c238ebfa4ac4f9201ca037d29d01e1c41cefefaf39ca5ed00d90d95ec4bdaef7",
+      "bytes": 17955
+    },
+    "uni-lewm-dual-loop.png": {
+      "sha256": "c6b81a33249edc503970f6f58ce6435a47e8ec51f0f2b966eb94bc748262deda",
+      "bytes": 1499010
+    },
+    "uni-lewm-dual-loop.pdf": {
+      "sha256": "14ad94ff84e700f60356122cae28ee1aa0b26c784e9b162ab59156595536de4a",
+      "bytes": 1456480
+    },
+    "uni-lewm-illustrated.png": {
+      "sha256": "96858151dd1c43fafe736df465c44ae803ff87ea246185208cf1d6784490d016",
+      "bytes": 275615
+    },
+    "uni-lewm-illustrated.svg": {
+      "sha256": "7545a6dcd59dfad90e9415e1304dc6b1018720e17663bd5d09018acbacde6035",
+      "bytes": 16164
+    }
+  }
+}

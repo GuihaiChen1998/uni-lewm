@@ -1,0 +1,256 @@
+{
+  "scope": "current managed Codex environment",
+  "skill_folders": 27,
+  "skill_install_root": "/home/agent/.codex/skills",
+  "repositories": [
+    {
+      "repo": "c-narcissus/paper-framework-figure-studio-pro",
+      "path": "/workspace/work/research-plugins/c-narcissus--paper-framework-figure-studio-pro",
+      "ok": true,
+      "error": "",
+      "skills": [],
+      "commit": "77557418b4ca8c24fa8961206bf9b8f7f6d030e1"
+    },
+    {
+      "repo": "deermiya/visio-skill",
+      "path": "/workspace/work/research-plugins/deermiya--visio-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "04c6d49ea303561f6c846727b662ef4be5bdca1f"
+    },
+    {
+      "repo": "bruc3van/bruce-drawio",
+      "path": "/workspace/work/research-plugins/bruc3van--bruce-drawio",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "ac561a0a449ebdb9fcee6af1d6965146a15cd96c"
+    },
+    {
+      "repo": "Haojae/scipilot-figure-skill",
+      "path": "/workspace/work/research-plugins/Haojae--scipilot-figure-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "43098ddb9e6a6d142218540c114f9ed38922fc42"
+    },
+    {
+      "repo": "TingxiYu/academic-figure-skill",
+      "path": "/workspace/work/research-plugins/TingxiYu--academic-figure-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "1df9940dd01ac939f072b12fe28d6353b79b90f9"
+    },
+    {
+      "repo": "Azhi-ss/academic-figure-skills",
+      "path": "/workspace/work/research-plugins/Azhi-ss--academic-figure-skills",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "fig-draw/SKILL.md",
+        "fig-pptx/SKILL.md",
+        "fig-analyze/SKILL.md"
+      ],
+      "commit": "73545d2f2227b03a185c8834709c7808ada5b0cb"
+    },
+    {
+      "repo": "Galaxy-Dawn/pubfig",
+      "path": "/workspace/work/research-plugins/Galaxy-Dawn--pubfig",
+      "ok": true,
+      "error": "",
+      "skills": [],
+      "commit": "4eec11658d689b730bebd299ee1a0a196687deaf"
+    },
+    {
+      "repo": "mjyoo2/OverleafMCP",
+      "path": "/workspace/work/research-plugins/mjyoo2--OverleafMCP",
+      "ok": true,
+      "error": "",
+      "skills": [],
+      "commit": "0ebe2ffc839179125e64a679bc402af57beab046"
+    },
+    {
+      "repo": "netique/overleaf-mcp",
+      "path": "/workspace/work/research-plugins/netique--overleaf-mcp",
+      "ok": true,
+      "error": "",
+      "skills": [],
+      "commit": "943a6941c724d49d7d1317d4f9cdc7a47ee6ae48"
+    },
+    {
+      "repo": "GhoshSrinjoy/Overleaf-mcp",
+      "path": "/workspace/work/research-plugins/GhoshSrinjoy--Overleaf-mcp",
+      "ok": true,
+      "error": "",
+      "skills": [],
+      "commit": "fbf9080f0936a2cb021488706f745355d0bc1cc3"
+    },
+    {
+      "repo": "Adkid-Zephyr/oral-paper-skill",
+      "path": "/workspace/work/research-plugins/Adkid-Zephyr--oral-paper-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "skills/oral-paper-skill/SKILL.md"
+      ],
+      "commit": "a2c4bc41b3aa6946b2ccce1c844ce9936ef83308"
+    },
+    {
+      "repo": "Adkid-Zephyr/anti-defensive-writing-Skill",
+      "path": "/workspace/work/research-plugins/Adkid-Zephyr--anti-defensive-writing-Skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "skills/anti-defensive-writing-en/SKILL.md",
+        "skills/anti-defensive-writing/SKILL.md"
+      ],
+      "commit": "82d31402caa0db1790026824399044538483171b"
+    },
+    {
+      "repo": "HKUSTDial/Supervisor-Skills",
+      "path": "/workspace/work/research-plugins/HKUSTDial--Supervisor-Skills",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "skills/tech-paper-template/SKILL.md",
+        "skills/rebuttal-guidance/SKILL.md",
+        "skills/figure-designer/SKILL.md",
+        "skills/drawio-reconstruction/SKILL.md",
+        "skills/idea-evaluator/SKILL.md",
+        "skills/pre-submission-reviewer/SKILL.md",
+        "skills/intro-drafter/SKILL.md",
+        "skills/vibe-research-workflow/SKILL.md",
+        "skills/deep-research/SKILL.md",
+        "skills/paper-writer/SKILL.md",
+        "skills/paper-polish/SKILL.md",
+        "skills/benchmark-paper-template/SKILL.md"
+      ],
+      "commit": "4bd3fef393e5ffc891c74309a5ef6c5ad3ad12c8"
+    },
+    {
+      "repo": "jin-s13/ai-research-writing-skill",
+      "path": "/workspace/work/research-plugins/jin-s13--ai-research-writing-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "e8b5de964737350757b5b17d8a658a22943c9595"
+    },
+    {
+      "repo": "crabin/paper-humanizer-skill",
+      "path": "/workspace/work/research-plugins/crabin--paper-humanizer-skill",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "63f83975d09a9778bb684345afc37cd946e9592d"
+    },
+    {
+      "repo": "op7418/Humanizer-zh",
+      "path": "/workspace/work/research-plugins/op7418--Humanizer-zh",
+      "ok": true,
+      "error": "",
+      "skills": [
+        "SKILL.md"
+      ],
+      "commit": "f4518a8eab97b8bfebc66a89d34320a89bef6930"
+    },
+    {
+      "repo": "alchaincyf/glm-claude/skills/ai-proofreading",
+      "source": "https://lobehub.com/skills/alchaincyf-glm-claude-ai-proofreading",
+      "status": "recovered skill body from LobeHub; original GitHub repository unavailable",
+      "installed": true
+    }
+  ],
+  "pubfig": "0.3.0 installed in dedicated venv",
+  "overleaf_authentication": "not configured",
+  "mcp_config": "/home/agent/.codex/config.toml",
+  "visio_runtime": "skill installed; actual Visio COM automation needs Windows + Microsoft Visio",
+  "mcp_verification": [
+    {
+      "server": "mjyoo2",
+      "status": "tools_discovered",
+      "count": 8,
+      "tools": [
+        "list_projects",
+        "list_files",
+        "read_file",
+        "get_sections",
+        "get_section_content",
+        "status_summary",
+        "write_file",
+        "write_section"
+      ],
+      "authenticated": false,
+      "discovery_config": "explicit dummy credentials; no project/network tools invoked"
+    },
+    {
+      "server": "netique",
+      "status": "tools_discovered",
+      "count": 17,
+      "tools": [
+        "ping",
+        "list_projects",
+        "open_project",
+        "list_files",
+        "read_file",
+        "edit_file",
+        "find_and_replace",
+        "compile",
+        "read_log",
+        "list_comments",
+        "read_comment_thread",
+        "reply_comment",
+        "resolve_comment",
+        "reopen_comment",
+        "list_tracked_changes",
+        "accept_changes",
+        "reject_changes"
+      ],
+      "authenticated": false,
+      "discovery_config": "no credentials"
+    },
+    {
+      "server": "ghosh",
+      "status": "tools_discovered",
+      "count": 21,
+      "tools": [
+        "status",
+        "sign_in",
+        "list_projects",
+        "pin_projects",
+        "create_project",
+        "list_files",
+        "read_file",
+        "grep",
+        "search",
+        "get_outline",
+        "get_section",
+        "edit_file",
+        "write_file",
+        "delete_file",
+        "move_file",
+        "create_folder",
+        "upload_file",
+        "download_file",
+        "compile",
+        "history",
+        "history_diff"
+      ],
+      "authenticated": false,
+      "discovery_config": "no credentials"
+    }
+  ]
+}

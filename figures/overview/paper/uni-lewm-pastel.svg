@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="129mm" viewBox="0 0 1800 1290">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="context-stroke"/></marker></defs>
+<rect width="1800" height="1290" fill="white"/>
+<text x="55" y="55" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="700" fill="#24334B" text-anchor="start">a</text>
+<text x="105" y="55" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="600" fill="#24334B" text-anchor="start">One shared model, two tokenizations</text>
+<rect x="55" y="90" width="1690" height="400" rx="24" fill="#FFFFFF" stroke="#CCD6E2" stroke-width="2" stroke-dasharray="7 8"/>
+<rect x="85" y="125" width="340" height="125" rx="18" fill="#F5F8FC" stroke="#E0E6ED" stroke-width="2"/>
+<text x="110" y="160" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="600" fill="#24334B" text-anchor="start">Observation / goal image</text>
+<rect x="110" y="177" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="135" y="177" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="160" y="177" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="185" y="177" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="210" y="177" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="235" y="177" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="110" y="190" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="135" y="190" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="160" y="190" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="185" y="190" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="210" y="190" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="235" y="190" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="110" y="203" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="135" y="203" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="160" y="203" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="185" y="203" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="210" y="203" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="235" y="203" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="110" y="216" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="135" y="216" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="160" y="216" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="185" y="216" width="20" height="9" rx="2" fill="#EACCC0" stroke="none" stroke-width="2"/>
+<rect x="210" y="216" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<rect x="235" y="216" width="20" height="9" rx="2" fill="#D5E5F7" stroke="none" stroke-width="2"/>
+<text x="290" y="205" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#557FB4" text-anchor="start">patches</text>
+<text x="290" y="232" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#557FB4" text-anchor="start">+ NULL</text>
+<path d="M425 188 H610" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="447" y="171" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#557FB4" text-anchor="start">spatial mode</text>
+<rect x="85" y="310" width="340" height="125" rx="18" fill="#F7F4FB" stroke="#E0E6ED" stroke-width="2"/>
+<text x="110" y="345" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#24334B" text-anchor="start">State–action history</text>
+<rect x="110" y="368" width="43" height="40" rx="8" fill="#DFE8F6" stroke="none" stroke-width="2"/>
+<text x="131" y="396" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#24334B" text-anchor="middle">z</text>
+<rect x="165" y="368" width="43" height="40" rx="8" fill="#F9E3D3" stroke="none" stroke-width="2"/>
+<text x="186" y="396" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#24334B" text-anchor="middle">a</text>
+<rect x="220" y="368" width="43" height="40" rx="8" fill="#DFE8F6" stroke="none" stroke-width="2"/>
+<text x="241" y="396" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#24334B" text-anchor="middle">z</text>
+<rect x="275" y="368" width="43" height="40" rx="8" fill="#F9E3D3" stroke="none" stroke-width="2"/>
+<text x="296" y="396" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#24334B" text-anchor="middle">a</text>
+<rect x="330" y="368" width="43" height="40" rx="8" fill="#EAE0F6" stroke="none" stroke-width="2"/>
+<text x="351" y="396" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#24334B" text-anchor="middle">q</text>
+<path d="M425 373 H610" fill="none" stroke="#8B77AC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="447" y="355" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#8B77AC" text-anchor="start">causal mode</text>
+<rect x="610" y="125" width="520" height="310" rx="24" fill="#EAF1FC" stroke="#C6D7EF" stroke-width="2"/>
+<text x="870" y="170" font-family="Arial, DejaVu Sans, sans-serif" font-size="33" font-weight="600" fill="#24334B" text-anchor="middle">Shared Transformer Fθ</text>
+<rect x="660" y="199" width="255" height="75" rx="12" fill="#FFFFFF" stroke="#C9D8ED" stroke-width="2"/>
+<rect x="673" y="207" width="255" height="75" rx="12" fill="#FFFFFF" stroke="#C9D8ED" stroke-width="2"/>
+<rect x="686" y="215" width="255" height="75" rx="12" fill="#FFFFFF" stroke="#C9D8ED" stroke-width="2"/>
+<text x="809" y="255" font-family="Arial, DejaVu Sans, sans-serif" font-size="27" font-weight="400" fill="#24334B" text-anchor="middle">Attention + MLP</text>
+<path d="M946 246 H985" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="990" y="207" width="95" height="77" rx="12" fill="#DDE8F9" stroke="#B5CBE8" stroke-width="2"/>
+<text x="1037" y="253" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="400" fill="#24334B" text-anchor="middle">Rθ</text>
+<text x="870" y="327" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#24334B" text-anchor="middle">Shared trainable weights</text>
+<text x="870" y="367" font-family="Arial, DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#607083" text-anchor="middle">Path-specific normalization statistics</text>
+<path d="M1130 190 H1270" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1270" y="140" width="425" height="110" rx="18" fill="#F3F8FC" stroke="#E0E6ED" stroke-width="2"/>
+<text x="1482" y="181" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#24334B" text-anchor="middle">Canonical latents</text>
+<text x="1482" y="221" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" font-weight="400" fill="#557FB4" text-anchor="middle">Current • goal • training targets</text>
+<path d="M1130 373 H1270" fill="none" stroke="#8B77AC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1270" y="320" width="425" height="110" rx="18" fill="#F7F3FB" stroke="#E0E6ED" stroke-width="2"/>
+<text x="1482" y="359" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#24334B" text-anchor="middle">Predicted next latent</text>
+<text x="1482" y="401" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="400" fill="#8B77AC" text-anchor="middle">Next state</text>
+<text x="85" y="474" font-family="Arial, DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#607083" text-anchor="start">Start: zero condition   •   Goal: uniform condition   •   Unknown incoming condition → NULL</text>
+<text x="55" y="555" font-family="Arial, DejaVu Sans, sans-serif" font-size="34" font-weight="700" fill="#24334B" text-anchor="start">b</text>
+<text x="105" y="555" font-family="Arial, DejaVu Sans, sans-serif" font-size="31" font-weight="600" fill="#24334B" text-anchor="start">Plan in latent space; act and observe</text>
+<path d="M1550 675 V603 H820 V675" fill="none" stroke="#B4825A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+<text x="1025" y="591" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#B4825A" text-anchor="start">sample / update candidate actions</text>
+<rect x="60" y="690" width="180" height="130" rx="18" fill="#F5F8FC" stroke="#E0E6ED" stroke-width="2"/>
+<text x="150" y="730" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="600" fill="#24334B" text-anchor="middle">Current image</text>
+<text x="150" y="773" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="400" fill="#557FB4" text-anchor="middle">image</text>
+<path d="M240 750 H280" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="280" y="715" width="110" height="70" rx="14" fill="#EAF1FC" stroke="#CCD9EB" stroke-width="2"/>
+<text x="335" y="760" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="400" fill="#557FB4" text-anchor="middle">Read</text>
+<path d="M390 750 H440" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="440" y="715" width="120" height="70" rx="14" fill="#E6EFFA" stroke="none" stroke-width="2"/>
+<text x="500" y="760" font-family="Arial, DejaVu Sans, sans-serif" font-size="27" font-weight="400" fill="#557FB4" text-anchor="middle">state</text>
+<path d="M560 750 H625" fill="none" stroke="#557FB4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="625" y="675" width="400" height="165" rx="22" fill="#F7F4FB" stroke="#D9CEE8" stroke-width="2"/>
+<text x="825" y="714" font-family="Arial, DejaVu Sans, sans-serif" font-size="29" font-weight="600" fill="#24334B" text-anchor="middle">Latent rollout</text>
+<text x="825" y="750" font-family="Arial, DejaVu Sans, sans-serif" font-size="22" font-weight="400" fill="#8B77AC" text-anchor="middle">same shared trunk and readout</text>
+<rect x="690" y="774" width="62" height="35" rx="8" fill="#E6DDF2" stroke="none" stroke-width="2"/>
+<text x="721" y="800" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#8B77AC" text-anchor="middle">ẑ</text>
+<path d="M755 791 H776" fill="none" stroke="#8B77AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="780" y="774" width="62" height="35" rx="8" fill="#E6DDF2" stroke="none" stroke-width="2"/>
+<text x="811" y="800" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#8B77AC" text-anchor="middle">ẑ</text>
+<path d="M845 791 H866" fill="none" stroke="#8B77AC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="870" y="774" width="62" height="35" rx="8" fill="#E6DDF2" stroke="none" stroke-width="2"/>
+<text x="901" y="800" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#8B77AC" text-anchor="middle">ẑ</text>
+<path d="M932 791 H1047 V868 H600 V775 H625" fill="none" stroke="#8B77AC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="707" y="896" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#8B77AC" text-anchor="start">predicted state → history</text>
+<path d="M1025 750 H1115" fill="none" stroke="#8B77AC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1036" y="730" font-family="Arial, DejaVu Sans, sans-serif" font-size="20" font-weight="400" fill="#8B77AC" text-anchor="start">terminal</text>
+<rect x="1115" y="675" width="230" height="165" rx="22" fill="#FCF0E7" stroke="#EDD9C9" stroke-width="2"/>
+<text x="1230" y="715" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" font-weight="600" fill="#24334B" text-anchor="middle">Goal distance</text>
+<text x="1230" y="758" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="400" fill="#B4825A" text-anchor="middle">Terminal / goal</text>
+<text x="1230" y="798" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#B4825A" text-anchor="middle">MSE</text>
+<path d="M1345 750 H1430" fill="none" stroke="#B4825A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1359" y="730" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#B4825A" text-anchor="start">cost</text>
+<rect x="1430" y="675" width="260" height="165" rx="22" fill="#FAE8DC" stroke="#EACBB5" stroke-width="2"/>
+<text x="1560" y="726" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" font-weight="600" fill="#24334B" text-anchor="middle">Categorical CEM</text>
+<text x="1560" y="775" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="400" fill="#B4825A" text-anchor="middle">best action sequence</text>
+<path d="M580 750 V871 H565 V925" fill="none" stroke="#557FB4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1560 840 V925" fill="none" stroke="#4D8C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1577" y="884" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#4D8C7C" text-anchor="start">first action</text>
+<text x="1577" y="912" font-family="Arial, DejaVu Sans, sans-serif" font-size="19" font-weight="400" fill="#4D8C7C" text-anchor="start">if not STOP</text>
+<rect x="1430" y="925" width="260" height="80" rx="18" fill="#465466" stroke="#465466" stroke-width="2"/>
+<text x="1560" y="975" font-family="Arial, DejaVu Sans, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" text-anchor="middle">Environment</text>
+<path d="M1560 1005 V1065 H150 V820" fill="none" stroke="#4D8C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="800" y="1050" font-family="Arial, DejaVu Sans, sans-serif" font-size="23" font-weight="400" fill="#4D8C7C" text-anchor="start">new real observation → re-encode</text>
+<rect x="850" y="925" width="190" height="80" rx="16" fill="#E7F3EF" stroke="#D0E7DE" stroke-width="2"/>
+<text x="945" y="974" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="600" fill="#4D8C7C" text-anchor="middle">Goal state</text>
+<path d="M1040 965 H1230 V840" fill="none" stroke="#4D8C7C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="400" y="925" width="330" height="80" rx="16" fill="#FFF6F1" stroke="#EAD8CC" stroke-width="2"/>
+<text x="565" y="959" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="600" fill="#24334B" text-anchor="middle">Observed distance</text>
+<text x="565" y="989" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="400" fill="#B4825A" text-anchor="middle">Current / goal MSE ≤ ε</text>
+<path d="M850 965 H730" fill="none" stroke="#4D8C7C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M400 965 H335" fill="none" stroke="#B4825A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="230" y="940" width="105" height="50" rx="12" fill="#F5D9CF" stroke="none" stroke-width="2"/>
+<text x="282" y="974" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#914F3D" text-anchor="middle">STOP</text>
+<text x="865" y="1030" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#4D8C7C" text-anchor="start">from goal image</text>
+<rect x="55" y="1120" width="1690" height="130" rx="20" fill="#F8FAFC" stroke="#DCE3EB" stroke-width="2"/>
+<text x="85" y="1160" font-family="Arial, DejaVu Sans, sans-serif" font-size="25" font-weight="600" fill="#24334B" text-anchor="start">Training only</text>
+<text x="85" y="1202" font-family="Arial, DejaVu Sans, sans-serif" font-size="24" font-weight="400" fill="#557FB4" text-anchor="start">Future images → shared encoder → targets</text>
+<path d="M670 1194 H735" fill="none" stroke="#557FB4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="775" y="1202" font-family="Arial, DejaVu Sans, sans-serif" font-size="26" font-weight="500" fill="#24334B" text-anchor="start">Multi-step prediction MSE + λ SIGReg(encoded states)</text>
+<text x="775" y="1236" font-family="Arial, DejaVu Sans, sans-serif" font-size="21" font-weight="400" fill="#607083" text-anchor="start">Joint gradients through encoding and prediction; no future images in imagined rollout.</text>
+</svg>

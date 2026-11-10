@@ -1,0 +1,418 @@
+{
+  "schema": "academic-figure/SemanticArchitecture@1",
+  "source_revision": "516ccfd2d1dbdbe807af02c4c956fc3423008910 (prior published source; inspected local working tree)",
+  "domain": "RL",
+  "evidence_level": "high",
+  "components": [
+    {
+      "id": "observations",
+      "label": "Observation / goal image",
+      "role": "input_data",
+      "figure_importance": "primary",
+      "responsibility": "Observed RGB frame or goal RGB image; future frames are targets during training only.",
+      "evidence": [
+        "src/fused_lewm/model.py:138-171",
+        "src/fused_lewm/losses.py:62-65"
+      ]
+    },
+    {
+      "id": "null_condition",
+      "label": "Unknown → NULL",
+      "role": "fusion_interaction",
+      "figure_importance": "secondary",
+      "responsibility": "Start zeros and goal uniform incoming conditions use known=False and become the same learned NULL token.",
+      "evidence": [
+        "src/fused_lewm/model.py:123-168"
+      ]
+    },
+    {
+      "id": "image_tokens",
+      "label": "Image tokens",
+      "role": "fusion_interaction",
+      "figure_importance": "primary",
+      "responsibility": "Patch projection, state readout token, NULL token, spatial positional embeddings; full spatial attention.",
+      "evidence": [
+        "src/fused_lewm/model.py:60-68",
+        "src/fused_lewm/model.py:158-162"
+      ]
+    },
+    {
+      "id": "shared_trunk",
+      "label": "Shared Transformer Fθ",
+      "role": "encoder_backbone",
+      "figure_importance": "primary",
+      "responsibility": "Exactly one trainable Transformer trunk serves image reading and causal latent prediction in the shared model.",
+      "evidence": [
+        "src/fused_lewm/model.py:69-71",
+        "src/fused_lewm/model.py:113-115",
+        "src/fused_lewm/model.py:161",
+        "src/fused_lewm/model.py:210"
+      ]
+    },
+    {
+      "id": "shared_readout",
+      "label": "Shared readout Rθ",
+      "role": "task_head",
+      "figure_importance": "secondary",
+      "responsibility": "Shared trainable MLP readout weights; image and prediction paths have separate affine-free BatchNorm running statistics.",
+      "evidence": [
+        "src/fused_lewm/model.py:72-89"
+      ]
+    },
+    {
+      "id": "canonical_states",
+      "label": "Observed / target latents",
+      "role": "output",
+      "figure_importance": "primary",
+      "responsibility": "Canonical state vectors z_t and goal z_g are encoded identically; target latents retain gradients.",
+      "evidence": [
+        "src/fused_lewm/model.py:162-171",
+        "src/fused_lewm/losses.py:52-65"
+      ]
+    },
+    {
+      "id": "action_sequences",
+      "label": "Candidate action sequences",
+      "role": "input_data",
+      "figure_importance": "primary",
+      "responsibility": "Sequences contain k physical actions; categorical distributions are sampled as complete trajectories, not averaged embeddings.",
+      "evidence": [
+        "src/fused_lewm/model.py:173-190",
+        "src/fused_lewm/model.py:234-263",
+        "src/fused_lewm/planner.py:85-89"
+      ]
+    },
+    {
+      "id": "causal_tokens",
+      "label": "Latent–action tokens",
+      "role": "fusion_interaction",
+      "figure_importance": "primary",
+      "responsibility": "Interleaved history-state/action pairs plus query and temporal/type embeddings; causal mask.",
+      "evidence": [
+        "src/fused_lewm/model.py:192-211"
+      ]
+    },
+    {
+      "id": "imagined_states",
+      "label": "Latent rollout",
+      "role": "output",
+      "figure_importance": "primary",
+      "responsibility": "Autoregressively feed predicted state back into bounded history; no imagined pixel frames or future observations.",
+      "evidence": [
+        "src/fused_lewm/model.py:213-232"
+      ]
+    },
+    {
+      "id": "training_objective",
+      "label": "Multi-step MSE + SIGReg",
+      "role": "loss_objective",
+      "figure_importance": "primary",
+      "responsibility": "MSE against encoded future states plus Gaussian characteristic-function regularization of encoded states.",
+      "evidence": [
+        "src/fused_lewm/losses.py:45-81"
+      ]
+    },
+    {
+      "id": "cem_planner",
+      "label": "Categorical CEM / MPC",
+      "role": "decision",
+      "figure_importance": "primary",
+      "responsibility": "Minimize final predicted latent mean-square distance to encoded goal, iteratively update action probabilities, execute first physical action.",
+      "evidence": [
+        "src/fused_lewm/planner.py:57-60",
+        "src/fused_lewm/planner.py:85-119"
+      ]
+    },
+    {
+      "id": "stop_gate",
+      "label": "Observed-goal STOP",
+      "role": "decision",
+      "figure_importance": "primary",
+      "responsibility": "Compare current observed latent and goal with calibrated threshold; emit protocol STOP one-hot if within threshold.",
+      "evidence": [
+        "src/fused_lewm/planner.py:72-84"
+      ]
+    },
+    {
+      "id": "environment",
+      "label": "Environment",
+      "role": "deterministic_execution",
+      "figure_importance": "primary",
+      "responsibility": "Execute first selected action, observe a new frame, re-encode and update real history. Environment never supplies future observations to candidate rollouts.",
+      "evidence": [
+        "README.md:101-105"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "observations__image_tokens",
+      "from": "observations",
+      "to": "image_tokens",
+      "kind": "executed",
+      "label": "patchify",
+      "evidence": [
+        "src/fused_lewm/model.py:158-160"
+      ]
+    },
+    {
+      "id": "null_condition__image_tokens",
+      "from": "null_condition",
+      "to": "image_tokens",
+      "kind": "executed",
+      "label": "NULL token",
+      "evidence": [
+        "src/fused_lewm/model.py:150-160"
+      ]
+    },
+    {
+      "id": "image_tokens__shared_trunk",
+      "from": "image_tokens",
+      "to": "shared_trunk",
+      "kind": "executed",
+      "label": "spatial mode",
+      "evidence": [
+        "src/fused_lewm/model.py:161"
+      ]
+    },
+    {
+      "id": "shared_trunk__shared_readout",
+      "from": "shared_trunk",
+      "to": "shared_readout",
+      "kind": "executed",
+      "label": "state token or query readout",
+      "evidence": [
+        "src/fused_lewm/model.py:162",
+        "src/fused_lewm/model.py:211"
+      ]
+    },
+    {
+      "id": "shared_readout__canonical_states",
+      "from": "shared_readout",
+      "to": "canonical_states",
+      "kind": "executed",
+      "label": "image-path latent",
+      "evidence": [
+        "src/fused_lewm/model.py:162-171"
+      ]
+    },
+    {
+      "id": "canonical_states__causal_tokens",
+      "from": "canonical_states",
+      "to": "causal_tokens",
+      "kind": "executed",
+      "label": "state history",
+      "evidence": [
+        "src/fused_lewm/model.py:201-205"
+      ]
+    },
+    {
+      "id": "action_sequences__causal_tokens",
+      "from": "action_sequences",
+      "to": "causal_tokens",
+      "kind": "executed",
+      "label": "physical action tokens",
+      "evidence": [
+        "src/fused_lewm/model.py:195-205"
+      ]
+    },
+    {
+      "id": "causal_tokens__shared_trunk",
+      "from": "causal_tokens",
+      "to": "shared_trunk",
+      "kind": "executed",
+      "label": "causal mode",
+      "evidence": [
+        "src/fused_lewm/model.py:207-210"
+      ]
+    },
+    {
+      "id": "shared_readout__imagined_states",
+      "from": "shared_readout",
+      "to": "imagined_states",
+      "kind": "executed",
+      "label": "prediction-path latent",
+      "evidence": [
+        "src/fused_lewm/model.py:211"
+      ]
+    },
+    {
+      "id": "imagined_states__causal_tokens",
+      "from": "imagined_states",
+      "to": "causal_tokens",
+      "kind": "feedback",
+      "label": "autoregressive state update",
+      "evidence": [
+        "src/fused_lewm/model.py:224-230"
+      ]
+    },
+    {
+      "id": "canonical_states__training_objective",
+      "from": "canonical_states",
+      "to": "training_objective",
+      "kind": "executed",
+      "label": "future targets + SIGReg",
+      "evidence": [
+        "src/fused_lewm/losses.py:63-73"
+      ]
+    },
+    {
+      "id": "imagined_states__training_objective",
+      "from": "imagined_states",
+      "to": "training_objective",
+      "kind": "executed",
+      "label": "multi-step predictions",
+      "evidence": [
+        "src/fused_lewm/losses.py:67-73"
+      ]
+    },
+    {
+      "id": "canonical_states__stop_gate",
+      "from": "canonical_states",
+      "to": "stop_gate",
+      "kind": "executed",
+      "label": "observed z_t and goal z_g",
+      "evidence": [
+        "src/fused_lewm/planner.py:72-74"
+      ]
+    },
+    {
+      "id": "canonical_states__cem_planner",
+      "from": "canonical_states",
+      "to": "cem_planner",
+      "kind": "executed",
+      "label": "goal z_g",
+      "evidence": [
+        "src/fused_lewm/planner.py:95-98"
+      ]
+    },
+    {
+      "id": "imagined_states__cem_planner",
+      "from": "imagined_states",
+      "to": "cem_planner",
+      "kind": "executed",
+      "label": "final rollout latent",
+      "evidence": [
+        "src/fused_lewm/planner.py:95-98"
+      ]
+    },
+    {
+      "id": "cem_planner__action_sequences",
+      "from": "cem_planner",
+      "to": "action_sequences",
+      "kind": "feedback",
+      "label": "elite-distribution update",
+      "evidence": [
+        "src/fused_lewm/planner.py:102-108"
+      ]
+    },
+    {
+      "id": "stop_gate__cem_planner",
+      "from": "stop_gate",
+      "to": "cem_planner",
+      "kind": "executed",
+      "label": "continue only if above threshold",
+      "evidence": [
+        "src/fused_lewm/planner.py:74-85"
+      ]
+    },
+    {
+      "id": "cem_planner__environment",
+      "from": "cem_planner",
+      "to": "environment",
+      "kind": "executed",
+      "label": "execute first action",
+      "evidence": [
+        "src/fused_lewm/planner.py:110-119",
+        "README.md:101-105"
+      ]
+    },
+    {
+      "id": "environment__observations",
+      "from": "environment",
+      "to": "observations",
+      "kind": "feedback",
+      "label": "next real observation",
+      "evidence": [
+        "README.md:101-105"
+      ]
+    }
+  ],
+  "authority_boundaries": [
+    {
+      "id": "observed_vs_imagined",
+      "description": "Only the environment supplies real new observations; latent candidate rollout has no access to future images."
+    },
+    {
+      "id": "goal_conditioning",
+      "description": "Goal enters planning cost and STOP check, not dynamics prediction."
+    },
+    {
+      "id": "training_vs_inference",
+      "description": "Future observations supply training targets only. Both encoding and prediction receive gradients; no EMA/stop-gradient target network."
+    },
+    {
+      "id": "weights_vs_statistics",
+      "description": "Trunk and all trainable readout weights shared; image/prediction BN buffers separate."
+    }
+  ],
+  "semantic_component_count": 13,
+  "visual_group_count": 3,
+  "peer_module_count": 2,
+  "figure_types": [
+    "Overall Framework"
+  ],
+  "formulas": [
+    {
+      "id": "image_encoding",
+      "text": "z_t = Eθ(o_t; NULL), z_g = Eθ(o_g; NULL)"
+    },
+    {
+      "id": "latent_dynamics",
+      "text": "hat z_(t+1) = Pθ(z_history, a_history)"
+    },
+    {
+      "id": "shared_weights",
+      "text": "Eθ and Pθ reuse Fθ and trainable Rθ; different tokenization and attention masks"
+    },
+    {
+      "id": "loss",
+      "text": "L = mean_h MSE(hat z_(t+h), z_(t+h)) + λ SIGReg(encoded states)"
+    },
+    {
+      "id": "planning_cost",
+      "text": "J(a_(t:t+H−1)) = ||hat z_(t+H) − z_g||² / d"
+    },
+    {
+      "id": "stop",
+      "text": "STOP iff ||z_t − z_g||² / d ≤ ε"
+    }
+  ],
+  "forbidden_claims": [
+    "No learned policy or BC loss in Uni-LeWM core. CEM produces action distributions; model goal STOP output is hard-coded metadata.",
+    "No Bayesian optimization, Gaussian-process surrogate, acquisition function, high/low fidelity evaluators, or dual-fidelity learning algorithm. Third requested style is visual grammar only.",
+    "No pixel decoder or future-image input during imagined rollout.",
+    "No independently parameterized target encoder, EMA, or stop-gradient targets.",
+    "No goal input directly into Pθ.",
+    "No physical STOP transition or guaranteed absorbing state.",
+    "Do not imply current encoder accepts known action conditions: encode(known=True) explicitly raises.",
+    "Do not average soft-action embeddings to represent uncertain futures: sample complete trajectories.",
+    "Do not claim the same BN running statistics are shared.",
+    "Do not hard-code d=192 or six layers in a general overview; toy benchmark uses d=48/two layers.",
+    "No paper-benchmark superiority or performance numbers should be introduced into method overview."
+  ],
+  "figure_recommendation": {
+    "hero": "One shared Transformer drawn once with spatial and causal input routes, shared-weights bracket and two readouts belonging to the same head.",
+    "three_regions": [
+      "Canonical image reading",
+      "Shared latent model and training objective",
+      "Goal-conditioned CEM planning and real-environment feedback"
+    ],
+    "caption_only": [
+      "Separate modality BN statistics",
+      "Fixed STOP metadata; threshold-controlled termination",
+      "Both encoded targets and predictions receive gradients"
+    ],
+    "visual_style_boundary": "Dual-fidelity loop style may use cool/warm paired containers and decision-feedback composition only, without borrowing Bayesian optimization mechanisms."
+  }
+}
